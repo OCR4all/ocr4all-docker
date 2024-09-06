@@ -28,7 +28,7 @@ services:
     user: "${UID:-}"
     restart: always
     environment:
-      - SPRING_PROFILES_ACTIVE=${OCR4ALL_PROFILES:-logging-debug,create_administrator,server,api,documentation,docker}
+      - SPRING_PROFILES_ACTIVE=${OCR4ALL_PROFILES:-logging-debug,create_administrator,server,api,api-localhost,documentation,docker}
     volumes:
       - ${OCR4ALL_HOME:-~/ocr4all/docker}:/srv/ocr4all
     ports:
@@ -41,8 +41,8 @@ services:
     ports:
       - "${OCR4ALL_WEBAPP_PORT:-8080}:80"
     environment:
-      API_BASE_URL: ${OCR4ALL_WEBAPP_API_BASE_URL}
-      LAREX_URL: ${OCR4ALL_WEBAPP_LAREX_URL}
+      API_BASE_URL: ${OCR4ALL_WEBAPP_API_BASE_URL:-http://localhost:9090/api/v1.0}
+      LAREX_URL: ${OCR4ALL_WEBAPP_LAREX_URL:-http://localhost:8081/Larex/directLibrary}
     restart: always
     image: uniwuezpd/ocr4all-frontend:${OCR4ALL_WEBAPP_TAG:-latest}
   larex:
