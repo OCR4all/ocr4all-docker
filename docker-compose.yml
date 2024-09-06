@@ -52,14 +52,14 @@ services:
     image: uniwuezpd/ocr4all-server:${OCR4ALL_SERVER_OCRD_TAG:-latest}
   webapp:
     ports:
-      - "8080:80"
+      - "${OCR4ALL_WEBAPP_PORT:-8080}:80"
     environment:
       API_BASE_URL: ${OCR4ALL_WEBAPP_API_BASE_URL}
       LAREX_URL: ${OCR4ALL_WEBAPP_LAREX_URL}
     image: uniwuezpd/ocr4all-frontend:${OCR4ALL_WEBAPP_TAG:-latest}
   larex:
     ports:
-      - "${LAREX_PORT:-8080}:8080"
+      - "${LAREX_PORT:-8081}:8080"
     restart: always
     volumes:
       - ${OCR4ALL_WORKSPACE}:/home/books
