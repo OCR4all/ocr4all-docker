@@ -43,6 +43,7 @@ services:
     environment:
       API_BASE_URL: ${OCR4ALL_WEBAPP_API_BASE_URL}
       LAREX_URL: ${OCR4ALL_WEBAPP_LAREX_URL}
+    restart: always
     image: uniwuezpd/ocr4all-frontend:${OCR4ALL_WEBAPP_TAG:-latest}
   larex:
     ports:
