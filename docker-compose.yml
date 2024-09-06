@@ -62,5 +62,5 @@ services:
       - "${LAREX_PORT:-8080}:8080"
     restart: always
     volumes:
-      - ${OCR4ALL_WORKSPACE}:/home/book
+      - ${OCR4ALL_WORKSPACE}:/home/books
     image: uniwuezpd/larex:legacy
