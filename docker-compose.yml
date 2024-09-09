@@ -29,6 +29,8 @@ services:
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=${OCR4ALL_PROFILES:-logging-debug,create_administrator,server,api,api-localhost,documentation,docker}
+      - OCR4ALL_APPLICATION_SECURITY_ADMINISTRATOR_LOGIN=${OCR4ALL_ADMINISTRATOR_LOGIN:-admin}
+      - OCR4ALL_APPLICATION_SECURITY_ADMINISTRATOR_PASSWORD=${OCR4ALL_ADMINISTRATOR_PASSWORD:-ocr4all}
     volumes:
       - ${OCR4ALL_HOME:-~/ocr4all/docker}:/srv/ocr4all
     ports:
