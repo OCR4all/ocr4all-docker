@@ -1,2 +1,15 @@
 /.idea/
 .env
+
+#
+# Eclipse
+#
+/.classpath
+/.factorypath
+/.loadpath
+/.metadata/
+/.project
+/.settings/
+/bin/
+/build/
+
