@@ -10,7 +10,7 @@ git clone https://github.com/OCR4all/ocr4all-docker
 Start your OCR4all instance with the following command while inside the cloned directory
 - `docker-compose up`
 > [!NOTE]  
-> Starting up the whole stack might take some time so if you can't login through the frontend right away just wait a few seconds and try again when everything has fully booted up.
+> Starting up the whole stack might take some time so if you can't login through the frontend right away just wait a few seconds and try again when everything has fully booted up. By default, the frontend is started on port 8080.
 ### Security
 A default administrator user is created. The login credentials are
 - username: `admin`
